@@ -18,11 +18,14 @@ public class CountDownLatchTest {
         CountDownLatch cdl = new CountDownLatch(6);
         for(int i=0;i<6;i++){
             new Thread(()->{
-                System.out.println(Thread.currentThread().getName());
+                System.out.println(Thread.currentThread().getName()+"国，被灭！");
                 cdl.countDown();
-            },String.valueOf(i)).start();
+            },CountryEnum.getEnum(i+1).getValue()).start();
         }
         cdl.await();
-        System.out.println(Thread.currentThread().getName());
+        System.out.println(Thread.currentThread().getName()+"秦国");
+        System.out.println(CountryEnum.ONE);
+        System.out.println(CountryEnum.ONE.getKey());
+        System.out.println(CountryEnum.ONE.getValue());
     }
 }
