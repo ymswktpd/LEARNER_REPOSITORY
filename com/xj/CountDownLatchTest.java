@@ -10,6 +10,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest {
     /**
+     * 计数器，调用一次减一，到0执行await方法后的
      * 其他执行完毕main线程再执行
      * @param args
      * @throws Exception
